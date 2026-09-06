@@ -1,6 +1,6 @@
 export const profile = {
-  name: "Tu Nombre Completo", // TODO: reemplazar
-  role: "Estudiante de Ingeniería de Sistemas",
+  name: "Portafolio Personal", // TODO: reemplazar
+  role: "Andres Felipe Monserrat Ardila",
   university: "Universidad del Norte",
   semester: "9° semestre",
   status: "Disponible para prácticas profesionales",
@@ -8,8 +8,8 @@ export const profile = {
   location: "Barranquilla, Colombia", // TODO: confirmar
   links: {
     github: "https://github.com/AndresMonserrat",
-    linkedin: "", // TODO
-    email: "", // TODO
+    linkedin: "www.linkedin.com/in/AndresMonserrat", // TODO
+    email: "andresmonserrat0413@gmail.com", // TODO
     cv: "", // TODO
   },
 };
@@ -50,8 +50,8 @@ export const projects = [
 ];
 
 export const nav = [
-  { id: "inicio", label: "inicio" },
-  { id: "stack", label: "stack" },
-  { id: "proyectos", label: "proyectos" },
-  { id: "contacto", label: "contacto" },
+  { id: "inicio", label: "Inicio" },
+  { id: "stack", label: "Stack" },
+  { id: "proyectos", label: "Proyectos" },
+  { id: "contacto", label: "Contacto" },
 ];

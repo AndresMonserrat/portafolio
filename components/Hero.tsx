@@ -4,7 +4,7 @@ export default function Hero() {
   const hasLinkedin = profile.links.linkedin.length > 0;
   const hasEmail = profile.links.email.length > 0;
   const hasCv = profile.links.cv.length > 0;
-
+  console.log(`estas en el hero ${profile.name}`);
   return (
     <header id="inicio" className="scroll-mt-24 lg:scroll-mt-10">
       <p className="font-mono text-sm text-accent">{profile.status}</p>
@@ -32,7 +32,7 @@ export default function Hero() {
         {hasLinkedin && (
           <a
             href={profile.links.linkedin}
-            target="_blank"
+            target="_top"
             rel="noopener noreferrer"
             className="border border-panel-border px-4 py-2 font-mono text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
           >
