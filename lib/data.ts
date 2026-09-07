@@ -1,14 +1,15 @@
+/*  */
 export const profile = {
   name: "Portafolio Personal", // TODO: reemplazar
-  role: "Andres Felipe Monserrat Ardila",
+  role: "Soy estudiante de Ingeniería de Sistemas y Computación en la Universidad del Norte, actualmente estoy cursando el noveno semestre.",
   university: "Universidad del Norte",
   semester: "9° semestre",
-  status: "Disponible para prácticas profesionales",
+  status: ["Hola!!, mi nombre es"," Andres Monserrat"],
   intro: "Construyo interfaces con Next.js y React, y este semestre estoy metiéndole cabeza en serio al backend: APIs, arquitectura de servicios y bases de datos.",
   location: "Barranquilla, Colombia", // TODO: confirmar
   links: {
     github: "https://github.com/AndresMonserrat",
-    linkedin: "www.linkedin.com/in/AndresMonserrat", // TODO
+    linkedin: "https://www.linkedin.com/in/andresmonserrat", // TODO
     email: "andresmonserrat0413@gmail.com", // TODO
     cv: "", // TODO
   },
