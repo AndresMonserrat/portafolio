@@ -1,4 +1,7 @@
 import { profile } from "@/lib/data";
+import AnimatedText from "./animation/AnimatedText";
+import AnimatedAnchor from "./animation/AnimatedAnchor";
+
 
 export default function Hero() {
   const hasLinkedin = profile.links.linkedin.length > 0;
@@ -6,60 +9,55 @@ export default function Hero() {
   const hasCv = profile.links.cv.length > 0;
   return (
     <header id="inicio" className="scroll-mt-24 lg:scroll-mt-10 gap-1000000 ">
-      <h1 className="">
-        <span className="mt-4 font-display text-5xl font-semibold tracking-tight text-foreground">
-          <p>{profile.status[0]}</p>
-          <p className="text-accent text-7xl">{profile.status[1]}</p>
-        </span>
-      </h1>
+      <div className="mt-4 font-display text-5xl font-semibold tracking-tight text-foreground">
+        <AnimatedText
+
+        > {profile.status[0]}</AnimatedText>
+
+        <AnimatedText className="text-accent text-7xl" delay={0.3}>
+          {profile.status[1]}
+        </AnimatedText>
+      </div>
       <div id="divContentLinks" className="mt-[5vh]">
-        <p className="mt-2 text-lg text-muted">
-          {profile.role} · {profile.university}
+        <p  className="mt-2 text-[1.25rem] text-shadow-white font-semibold text-muted">
+          {profile.role} 
         </p>
         <p className="mt-1 font-mono text-xs text-muted">
-          {profile.semester} · {profile.location}
+          {profile.semester} · {profile.location} · {profile.university}
         </p>
         <p className="mt-8 max-w-xl leading-relaxed text-foreground">
           {profile.intro}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a
+          <AnimatedAnchor
             href={profile.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
             className="border border-panel-border px-4 py-2 font-mono text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
           >
             GitHub
-          </a>
+          </AnimatedAnchor  >
           {hasLinkedin && (
-            <a
+            <AnimatedAnchor
               href={profile.links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
               className="border border-panel-border px-4 py-2 font-mono text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
             >
               LinkedIn
-            </a>
+            </AnimatedAnchor>
           )}
           {hasEmail && (
-            <a
+            <AnimatedAnchor
               href={`mailto:${profile.links.email}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className="border border-panel-border px-4 py-2 font-mono text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
             >
               Email
-            </a>
+            </AnimatedAnchor>
           )}
           {hasCv && (
-            <a
+            <AnimatedAnchor
               href={profile.links.cv}
-              target="_blank"
-              rel="noopener noreferrer"
               className="border border-panel-border px-4 py-2 font-mono text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
             >
               CV
-            </a>
+            </AnimatedAnchor>
           )}
         </div>
       </div>

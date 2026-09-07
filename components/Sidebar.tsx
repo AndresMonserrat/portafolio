@@ -1,6 +1,7 @@
 import { nav } from "@/lib/data";
 
 export default function Sidebar() {
+
   return (
     <aside className="border-b border-panel-border lg:sticky lg:top-0 lg:h-screen lg:border-b-0 lg:border-r lg:px-[5vw] lg:py-[5vh]">
       <nav
