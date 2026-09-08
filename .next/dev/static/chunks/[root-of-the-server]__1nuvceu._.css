@@ -823,6 +823,10 @@
     max-width: 1vw;
   }
 
+  .max-w-\[50vw\] {
+    max-width: 50vw;
+  }
+
   .max-w-\[60vw\] {
     max-width: 60vw;
   }
@@ -891,6 +895,14 @@
     justify-content: center;
   }
 
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+  .justify-items-center {
+    justify-items: center;
+  }
+
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
   }
@@ -923,6 +935,12 @@
     margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
   }
 
+  :where(.space-y-4 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
   :where(.space-y-6 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
@@ -941,6 +959,14 @@
 
   .gap-y-2 {
     row-gap: calc(var(--spacing) * 2);
+  }
+
+  .self-center {
+    align-self: center;
+  }
+
+  .justify-self-center {
+    justify-self: center;
   }
 
   .rounded-full {
@@ -1036,6 +1062,22 @@
 
   .text-center {
     text-align: center;
+  }
+
+  .align-baseline {
+    vertical-align: baseline;
+  }
+
+  .align-sub {
+    vertical-align: sub;
+  }
+
+  .align-super {
+    vertical-align: super;
+  }
+
+  .align-top {
+    vertical-align: top;
   }
 
   .font-display {
@@ -1153,6 +1195,10 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:flex {
+      display: flex;
+    }
+
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }

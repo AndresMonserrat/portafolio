@@ -8,7 +8,7 @@ export default function Stack() {
   return (
     <motion.section
       id="stack"
-      className="scroll-mt-24"
+      className="scroll-mt-24 justify-between gap-8 "
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
@@ -18,9 +18,9 @@ export default function Stack() {
         Stack<span className="text-accent text-[1.25rem]">{">"}_</span>
       </h2>
 
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 max-w-[50vw] justify-self-center align-items-center w-full">
         {stack.map((group) => (
-          <div key={group.group}>
+          <div key={group.group} className="align-center justify-start flex flex-col gap-2">
             <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-muted">
               {group.group}
             </h3>

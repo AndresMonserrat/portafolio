@@ -34,7 +34,7 @@ export default function Hero() {
             ))}
           </motion.span>
         </motion.span>
-                
+
         <motion.h1
           variants={fadeUp}
           className="mt-6 font-display text-5xl font-bold tracking-tight text-foreground lg:text-7xl"
