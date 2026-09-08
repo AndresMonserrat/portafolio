@@ -1,4 +1,9 @@
+"use client";
+
+import { FolderGit } from "lucide-react";
+import { motion } from "motion/react";
 import { projects } from "@/lib/data";
+import { buttonMotion, fadeUp, viewport } from "@/lib/animations";
 
 const MONTHS = [
   "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic",
@@ -11,7 +16,14 @@ function formatPushedAt(pushedAt: string) {
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="scroll-mt-24">
+    <motion.section
+      id="proyectos"
+      className="scroll-mt-24"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewport}
+    >
       <h2 className="font-display text-3xl font-bold text-foreground">
         Proyectos
       </h2>
@@ -23,33 +35,52 @@ export default function Projects() {
             className="rounded-xl border border-panel-border bg-panel p-6 lg:p-8"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-display text-2xl font-bold text-foreground transition-colors hover:text-accent"
-              >
+              <h3 className="font-display text-2xl font-bold text-foreground">
                 {project.name}
-              </a>
+              </h3>
               <p className="font-mono text-xs text-accent">{project.period}</p>
             </div>
 
-            <p className="mt-3 max-w-prose text-muted">{project.description}</p>
+            <div className="mt-2 space-y-2">
+              {project.sections.map((section, i) => (
+                <div
+                  key={section.key}
+                  className={i > 0 ? "border-t border-panel-border pt-6" : ""}
+                >
+                  <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-accent">
+                    {section.label}
+                  </h4>
 
-            <blockquote className="mt-5 max-w-prose border-l-2 border-accent pl-4 text-sm leading-relaxed text-foreground">
-              {project.highlight}
-            </blockquote>
+                  <p className="mt-3 max-w-prose text-muted">
+                    {section.description}
+                  </p>
 
-            <p className="mt-4 font-mono text-xs text-muted">
-              {project.tech.join(", ")}
-            </p>
+                  <blockquote className="mt-4 max-w-prose border-l-2 border-accent pl-4 text-sm leading-relaxed text-foreground">
+                    {section.highlight}
+                  </blockquote>
 
-            <p className="mt-5 inline-flex items-center gap-1.5 font-mono text-xs text-muted">
-                Actualizado {formatPushedAt(project.pushedAt)}
-            </p>
+                  <p className="mt-4 font-mono text-xs text-muted">
+                    {section.tech.join(", ")}
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap items-center gap-4">
+                    <motion.a
+                      href={section.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      {...buttonMotion}
+                      className="inline-flex items-center gap-2 rounded-full border border-panel-border bg-panel px-3 py-1 font-mono text-xs text-foreground transition-colors hover:text-accent"
+                    >
+                      <FolderGit className="h-3.5 w-3.5" aria-hidden="true" />
+                      {section.repo}
+                    </motion.a>
+                  </div>
+                </div>
+              ))}
+            </div>
           </article>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

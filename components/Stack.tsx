@@ -1,15 +1,26 @@
+"use client";
+
+import { motion } from "motion/react";
 import { stack } from "@/lib/data";
+import { fadeUp, viewport } from "@/lib/animations";
 
 export default function Stack() {
   return (
-    <section id="stack" className="scroll-mt-24">
+    <motion.section
+      id="stack"
+      className="scroll-mt-24 justify-between gap-8 "
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewport}
+    >
       <h2 className="font-display text-3xl font-bold text-foreground">
         Stack<span className="text-accent text-[1.25rem]">{">"}_</span>
       </h2>
 
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 max-w-[50vw] justify-self-center align-items-center w-full">
         {stack.map((group) => (
-          <div key={group.group}>
+          <div key={group.group} className="align-center justify-start flex flex-col gap-2">
             <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-muted">
               {group.group}
             </h3>
@@ -28,6 +39,6 @@ export default function Stack() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

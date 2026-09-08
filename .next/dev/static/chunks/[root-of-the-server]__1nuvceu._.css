@@ -727,8 +727,24 @@
     z-index: 50;
   }
 
+  .m-\[1\] {
+    margin: 1px;
+  }
+
+  .m-\[1rem\] {
+    margin: 1rem;
+  }
+
+  .m-\[2rem\] {
+    margin: 2rem;
+  }
+
   .mx-auto {
     margin-inline: auto;
+  }
+
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
   }
 
   .mt-3 {
@@ -761,6 +777,10 @@
 
   .grid {
     display: grid;
+  }
+
+  .hidden {
+    display: none;
   }
 
   .inline-flex {
@@ -797,6 +817,30 @@
 
   .max-w-4xl {
     max-width: var(--container-4xl);
+  }
+
+  .max-w-\[1vw\] {
+    max-width: 1vw;
+  }
+
+  .max-w-\[50vw\] {
+    max-width: 50vw;
+  }
+
+  .max-w-\[60vw\] {
+    max-width: 60vw;
+  }
+
+  .max-w-\[70vw\] {
+    max-width: 70vw;
+  }
+
+  .max-w-\[80vw\] {
+    max-width: 80vw;
+  }
+
+  .max-w-\[100vw\] {
+    max-width: 100vw;
   }
 
   .max-w-md {
@@ -851,12 +895,24 @@
     justify-content: center;
   }
 
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+  .justify-items-center {
+    justify-items: center;
+  }
+
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
   }
 
   .gap-2 {
     gap: calc(var(--spacing) * 2);
+  }
+
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
   }
 
   .gap-6 {
@@ -871,6 +927,18 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
+  :where(.space-y-4 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
   }
 
   :where(.space-y-6 > :not(:last-child)) {
@@ -893,6 +961,14 @@
     row-gap: calc(var(--spacing) * 2);
   }
 
+  .self-center {
+    align-self: center;
+  }
+
+  .justify-self-center {
+    justify-self: center;
+  }
+
   .rounded-full {
     border-radius: 3.40282e38px;
   }
@@ -904,6 +980,11 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
   }
 
   .border-l-2 {
@@ -959,8 +1040,16 @@
     padding-block: calc(var(--spacing) * 5);
   }
 
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
+  }
+
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
   }
 
   .pl-4 {
@@ -973,6 +1062,22 @@
 
   .text-center {
     text-align: center;
+  }
+
+  .align-baseline {
+    vertical-align: baseline;
+  }
+
+  .align-sub {
+    vertical-align: sub;
+  }
+
+  .align-super {
+    vertical-align: super;
+  }
+
+  .align-top {
+    vertical-align: top;
   }
 
   .font-display {
@@ -1067,6 +1172,12 @@
     text-decoration-line: underline;
   }
 
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -1084,6 +1195,10 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:flex {
+      display: flex;
+    }
+
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1100,6 +1215,18 @@
 
     .lg\:py-24 {
       padding-block: calc(var(--spacing) * 24);
+    }
+
+    .lg\:py-\[1vh\] {
+      padding-block: 1vh;
+    }
+
+    .lg\:py-\[4vh\] {
+      padding-block: 4vh;
+    }
+
+    .lg\:py-\[5vh\] {
+      padding-block: 5vh;
     }
 
     .lg\:text-7xl {
