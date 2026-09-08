@@ -1,10 +1,21 @@
+"use client";
+
+import { motion } from "motion/react";
 import { profile } from "@/lib/data";
+import { buttonMotion, fadeUp, viewport } from "@/lib/animations";
 
 export default function Contact() {
   const hasCv = profile.links.cv.length > 0;
 
   return (
-    <footer id="contacto" className="scroll-mt-24">
+    <motion.footer
+      id="contacto"
+      className="scroll-mt-24"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewport}
+    >
       <div className="mx-auto flex max-w-2xl flex-col items-center">
         <h2 className="font-display text-3xl font-bold text-foreground">
           Hablemos<span className="text-accent">.</span>
@@ -17,43 +28,47 @@ export default function Contact() {
 
         <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-mono text-sm">
           <li>
-            <a
+            <motion.a
               href={profile.links.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              {...buttonMotion}
               className="text-foreground underline transition-colors hover:text-accent"
             >
               LinkedIn
-            </a>
+            </motion.a>
           </li>
           <li>
-            <a
+            <motion.a
               href={profile.links.github}
               target="_blank"
               rel="noopener noreferrer"
+              {...buttonMotion}
               className="text-foreground underline transition-colors hover:text-accent"
             >
               GitHub
-            </a>
+            </motion.a>
           </li>
           <li>
-            <a
+            <motion.a
               href={`mailto:${profile.links.email}`}
+              {...buttonMotion}
               className="text-accent underline"
             >
               {profile.links.email}
-            </a>
+            </motion.a>
           </li>
           {hasCv && (
             <li>
-              <a
+              <motion.a
                 href={profile.links.cv}
                 target="_blank"
                 rel="noopener noreferrer"
+                {...buttonMotion}
                 className="text-foreground underline transition-colors hover:text-accent"
               >
                 Curriculum Vitae
-              </a>
+              </motion.a>
             </li>
           )}
         </ul>
@@ -64,6 +79,6 @@ export default function Contact() {
           Diseñado & Desarrollado por Andres Monserrat · 2026
         </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

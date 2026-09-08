@@ -1,8 +1,19 @@
+"use client";
+
+import { motion } from "motion/react";
 import { stack } from "@/lib/data";
+import { fadeUp, viewport } from "@/lib/animations";
 
 export default function Stack() {
   return (
-    <section id="stack" className="scroll-mt-24">
+    <motion.section
+      id="stack"
+      className="scroll-mt-24"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewport}
+    >
       <h2 className="font-display text-3xl font-bold text-foreground">
         Stack<span className="text-accent text-[1.25rem]">{">"}_</span>
       </h2>
@@ -28,6 +39,6 @@ export default function Stack() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
