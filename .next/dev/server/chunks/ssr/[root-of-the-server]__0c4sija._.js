@@ -156,7 +156,7 @@ const profile = {
         github: "https://github.com/AndresMonserrat",
         linkedin: "https://www.linkedin.com/in/andresmonserrat",
         email: "andresmonserrat0413@gmail.com",
-        cv: ""
+        cv: "https://drive.google.com/file/d/1leRMU62p0ShWQKmRXq9yQtRPqbSLYFHE/view?usp=sharing"
     }
 };
 const stack = [
