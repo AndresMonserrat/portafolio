@@ -67,7 +67,7 @@ export default function Contact() {
                 {...buttonMotion}
                 className="text-foreground underline transition-colors hover:text-accent"
               >
-                Curriculum Vitae
+                Curriculum
               </motion.a>
             </li>
           )}

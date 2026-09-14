@@ -115,7 +115,7 @@ function Contact() {
                                 rel: "noopener noreferrer",
                                 ...__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$animations$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buttonMotion"],
                                 className: "text-foreground underline transition-colors hover:text-accent",
-                                children: "Curriculum Vitae"
+                                children: "Curriculum"
                             }, void 0, false, {
                                 fileName: "[project]/components/Contact.tsx",
                                 lineNumber: 63,
@@ -800,7 +800,7 @@ const profile = {
         github: "https://github.com/AndresMonserrat",
         linkedin: "https://www.linkedin.com/in/andresmonserrat",
         email: "andresmonserrat0413@gmail.com",
-        cv: ""
+        cv: "https://drive.google.com/file/d/1leRMU62p0ShWQKmRXq9yQtRPqbSLYFHE/view?usp=sharing"
     }
 };
 const stack = [
