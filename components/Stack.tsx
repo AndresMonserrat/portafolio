@@ -18,9 +18,9 @@ export default function Stack() {
         Stack<span className="text-accent text-[1.25rem]">{">"}_</span>
       </h2>
 
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 max-w-[50vw] justify-self-center align-items-center w-full">
+      <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
         {stack.map((group) => (
-          <div key={group.group} className="align-center justify-start flex flex-col gap-2">
+          <div key={group.group} className="flex flex-col gap-2">
             <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-muted">
               {group.group}
             </h3>

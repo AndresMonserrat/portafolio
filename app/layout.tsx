@@ -22,9 +22,28 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+const title = `${profile.name} — ${profile.brand}`;
+const description = `${profile.metadata} · ${profile.university}. ${profile.quote}`;
+
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.brand}`,
-  description: `${profile.metadata} ${profile.university}.`,
+  // metadataBase: new URL("https://..."), // TODO: set once deployed (Vercel domain)
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    locale: "es_CO",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -33,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="es"
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
-      <body className="border-amber-50">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

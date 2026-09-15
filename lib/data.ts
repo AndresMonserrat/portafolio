@@ -19,7 +19,7 @@ export const profile = {
 export const stack = [
   {
     group: "FRONTEND",
-    strong: ["Next.js", "React", "TypeScript", "Flutter", "Tailwind CSS"],
+    strong: ["Next.js", "React", "Tailwind CSS", "Flutter"],
     items: [],
   },
   {
@@ -28,9 +28,19 @@ export const stack = [
     items: ["Prisma", "PostgreSQL", "JWT"],
   },
   {
+    group: "LENGUAJES",
+    strong: ["Python", "Dart", "JavaScript", "TypeScript"],
+    items: ["NumPy", "Pandas"],
+  },
+  {
     group: "HERRAMIENTAS",
-    strong: ["Docker"],
+    strong: ["Git", "GitHub", "Docker", "Figma"],
     items: [],
+  },
+  {
+    group: "IDIOMAS",
+    strong: [],
+    items: ["Inglés (B2)", "Español (Nativo)"],
   },
 ];
 
@@ -38,50 +48,58 @@ export const projects = [
   {
     slug: "iris",
     name: "IRIS",
-    period: "2026-I",
+    tagline: "Plataforma de evaluación de proyectos",
+    period: "2025-II",
+    liveUrl: "https://iris.uninorte.edu.co/",
+    liveLabel: "Ver página",
+    description:
+      "Plataforma web para gestionar y evaluar proyectos académicos. Participé en su desarrollo full-stack, utilizando Next.js, React y TypeScript en el frontend, y NestJS, PostgreSQL y Prisma en el backend.",
+    highlight:
+      "Arquitectura de microservicios, donde los servicios se comunican mediante gRPC.",
     sections: [
       {
         key: "frontend",
         label: "Frontend",
-        description:
-          "Aplicación web para la gestión y calificación de proyectos por parte de jurados en eventos académicos.",
-        highlight:
-          "Frontend con Next.js + React + TypeScript, estructurado sobre una arquitectura limpia orientada a features para alta escalabilidad.",
         tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
         href: "https://github.com/PCPI-UN/iris-front",
         repo: "PCPI-UN/iris-front",
-        pushedAt: "2026-08",
       },
       {
         key: "backend",
         label: "Backend",
-        description:
-          "Backend de microservicios para la gestión y calificación de proyectos por parte de jurados en eventos académicos.",
-        highlight:
-          "Arquitectura de microservicios con NestJS y gRPC: un gateway HTTP/REST y servicios de auth, evaluación, eventos, invitaciones, proyectos y notificaciones. Cada servicio con su propia base de datos PostgreSQL y despliegue completo vía Docker Compose.",
         tech: ["NestJS", "TypeScript", "Prisma", "PostgreSQL", "Docker"],
         href: "https://github.com/PCPI-UN/Iris",
-        repo: "github.com/Iris",
-        pushedAt: "2026-08",
+        repo: "PCPI-UN/Iris",
       },
     ],
   },
   {
     slug: "arkad",
     name: "Arkad",
-    period: "2024-II",
+    tagline: "Plataforma de evaluación de videojuegos",
+    period: "2025-I",
+    liveUrl: "https://arkad.openlab.uninorte.edu.co/",
+    liveLabel: "Ver pagina",
+    description:
+      "Plataforma web para la gestión y evaluación de proyectos de videojuegos. Participé en su desarrollo full-stack, utilizando React, TypeScript y Vite en el frontend, junto con Node.js, PostgreSQL y Prisma en el backend.",
+    highlight:
+      "Integra autenticación, gestión de usuarios y equipos, carga de archivos mediante Azure Blob Storage y un sistema de evaluación por jurados. El entorno de desarrollo está containerizado con Docker.",
     sections: [
       {
-        key: "api",
-        label: "API",
-        description:
-          "API backend robusta y segura diseñada para soportar una plataforma global de envío y evaluación de videojuegos.",
-        highlight:
-          "Control de acceso seguro basado en tokens JWT, persistencia relacional con Prisma + PostgreSQL y almacenamiento optimizado en Azure Blob Storage.",
-        tech: ["Node.js", "NestJS", "Prisma", "PostgreSQL", "JWT"],
+        key: "frontend",
+        label: "Frontend",
+        tech: ["React", "TypeScript", "Vite"],
+        href: "https://github.com/djromerom/gamerlab_front_2295_2",
+        repo: "djromerom/gamerlab_front_2295_2",
+        private: true,
+      },
+      {
+        key: "backend",
+        label: "Backend",
+        tech: ["Node.js", "NestJS", "Prisma", "PostgreSQL", "JWT", "Docker"],
         href: "https://github.com/djromerom/gamerlab_back_2295_2",
-        repo: "github.com/Arkad",
-        pushedAt: "2026-07",
+        repo: "djromerom/gamerlab_back_2295_2",
+        private: true,
       },
     ],
   },
