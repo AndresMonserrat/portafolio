@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="mx-auto max-w-[70vw] px-6 py-10 lg:px-12 lg:py-[4vh]">
+      <main className="mx-auto max-w-[90vw] px-6 py-10 sm:max-w-[85vw] lg:max-w-[70vw] lg:px-12 lg:py-[4vh]">
         <div className="space-y-24">
           <Hero />
           <Stack />
