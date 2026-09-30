@@ -18,6 +18,23 @@ Soy **Andres Monserrat**, estudiante de **Ingeniería de Sistemas en la Universi
 
 Aquí encontrarás ejemplos de **aplicaciones, componentes y utilidades** que reflejan mi aprendizaje, mi estilo de desarrollo y mi capacidad para abordar y resolver problemas reales mediante la tecnología.
 
+## Ejecutar localmente
+
+Requiere Node 24 y pnpm.
+
+```bash
+pnpm install
+pnpm dev        # http://localhost:3000
+```
+
+## Ejecutar con Docker
+
+```bash
+docker compose up -d --build   # http://localhost:3000
+docker compose down            # detener
+```
+
+La imagen usa la salida `standalone` de Next.js: solo incluye el servidor y las dependencias necesarias, y se ejecuta con un usuario sin privilegios.
 
 ## Contacto y colaboración
 
