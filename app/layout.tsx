@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
+import SmoothScroll from "@/components/SmoothScroll";
 import { profile } from "@/lib/data";
 
 const display = Space_Grotesk({
@@ -46,13 +47,29 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#12151b",
+  colorScheme: "dark",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="es"
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <noscript>
+          <style>{".reveal-on-load{visibility:visible!important}"}</style>
+        </noscript>
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:font-bold focus:text-ink"
+        >
+          Saltar al contenido
+        </a>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

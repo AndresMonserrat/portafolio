@@ -79,7 +79,7 @@ export const projects = [
     tagline: "Plataforma de evaluación de videojuegos",
     period: "2025-I",
     liveUrl: "https://arkad.openlab.uninorte.edu.co/",
-    liveLabel: "Ver pagina",
+    liveLabel: "Ver página",
     description:
       "Plataforma web para la gestión y evaluación de proyectos de videojuegos. Participé en su desarrollo full-stack, utilizando React, TypeScript y Vite en el frontend, junto con Node.js, PostgreSQL y Prisma en el backend.",
     highlight:
