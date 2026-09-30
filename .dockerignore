@@ -1,0 +1,24 @@
+# Se instalan y generan dentro del contenedor
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+
+# No hacen falta para construir la imagen
+.git
+.gitignore
+gallery
+package-lock.json
+Dockerfile
+.dockerignore
+compose.yaml
+readme.md
+.vscode
+.idea
+
+# Secretos y basura local
+.env*
+*.pem
+npm-debug.log*
+.DS_Store
