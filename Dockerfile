@@ -18,6 +18,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+ENV NEXT_OUTPUT_STANDALONE=1
 RUN pnpm build
 
 # ---- Runtime: solo la salida standalone, sin node_modules completos ni código fuente ----
