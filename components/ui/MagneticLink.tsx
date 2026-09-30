@@ -56,7 +56,7 @@ export default function MagneticLink({
     <a
       ref={linkRef}
       className={cn(
-        "inline-flex rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-ink",
+        "inline-flex rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-bg",
         className,
       )}
       {...props}

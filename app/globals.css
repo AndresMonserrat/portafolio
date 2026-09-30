@@ -1,47 +1,75 @@
 @import "tailwindcss";
 
+/* Tema oscuro manual: <html data-theme="dark">. El claro es el predeterminado. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Paleta: Midnight Navy #101827 · Warm Ivory #F4F2EC · Sage Green #C8D8D0 · Terracotta #D78B65 */
 :root {
-  --ink: #12151b;
-  --panel: #1b2029;
-  --panel-border: #2a3040;
-  --foreground: #e8e6de;
-  --muted: #8b93a1;
-  --accent: #3ddc97;
-  --accent-dim: #2a9d6f;
+  --bg: #f4f2ec;
+  --surface: #fbfaf6;
+  --fg: #101827;
+  --muted: #555e6e;
+  --line: #dcd7ca;
+  --accent: #d78b65;
+  --accent-ink: #9c4a26; /* terracota legible como texto sobre ivory (≥ 4.5:1) */
+  --sage: #c8d8d0;
+  --sage-ink: #3d5a4c;
+  --navy: #101827;
+  --ivory: #f4f2ec;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #101827;
+  --surface: #172036;
+  --fg: #f4f2ec;
+  --muted: #a3acbb;
+  --line: #28334b;
+  --accent: #d78b65;
+  --accent-ink: #e7a987;
+  --sage: #c8d8d0;
+  --sage-ink: #c8d8d0;
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-ink: var(--ink);
-  --color-panel: var(--panel);
-  --color-panel-border: var(--panel-border);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
   --color-muted: var(--muted);
+  --color-line: var(--line);
   --color-accent: var(--accent);
-  --color-accent-dim: var(--accent-dim);
+  --color-accent-ink: var(--accent-ink);
+  --color-sage: var(--sage);
+  --color-sage-ink: var(--sage-ink);
+  --color-navy: var(--navy);
+  --color-ivory: var(--ivory);
 
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+
+  /* Rebote tipo resorte para los "boops" al pasar el mouse. */
+  --ease-spring: linear(0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1);
 }
 
 html {
-  color-scheme: dark;
-  /* Altura del navbar sticky + margen: aplica a anclas (nativas y Lenis) y al foco con Tab. */
   scroll-padding-top: 6rem;
 }
 
 body {
-  background-color: var(--ink);
-  color: var(--foreground);
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
   background-color: var(--accent);
-  color: var(--ink);
+  color: var(--navy);
 }
 
 /* SplitType: cada palabra enmascara sus caracteres para el efecto de revelado. */
@@ -58,10 +86,26 @@ body {
   will-change: transform;
 }
 
-/* Contenido above-the-fold: oculto hasta que GSAP lo revele, evitando el parpadeo previo a
-   la hidratación. Con reduced-motion no se oculta; sin JS lo restaura el <noscript> del layout. */
+/* Contenido above-the-fold: oculto hasta que GSAP lo revele. Sin JS lo restaura el <noscript>. */
 @media (prefers-reduced-motion: no-preference) {
   .reveal-on-load {
     visibility: hidden;
+  }
+}
+
+/* Cambio de tema: el círculo lo anima ThemeToggle; se desactiva el fundido por defecto. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

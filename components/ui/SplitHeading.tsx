@@ -36,6 +36,8 @@ export default function SplitHeading({
 
       mm.add(MOTION_OK, () => {
         if (!splitRef.current) return;
+        // Con trigger "load" el encabezado arranca oculto por CSS; se revela antes de crear los tweens.
+        if (trigger === "load") gsap.set(headingRef.current, { autoAlpha: 1 });
 
         // Cada palabra actúa como máscara (overflow: hidden) y los caracteres suben desde abajo.
         const split = new SplitType(splitRef.current, {
@@ -77,7 +79,7 @@ export default function SplitHeading({
   );
 
   return (
-    <Tag ref={headingRef} className={cn("text-balance", className)} {...props}>
+    <Tag ref={headingRef} className={cn("text-balance", trigger === "load" && "reveal-on-load", className)} {...props}>
       <span className="sr-only">{text}</span>
       <span ref={splitRef} aria-hidden="true" className="split-text">
         {text}
