@@ -40,7 +40,7 @@ export async function generateMetadata(props: LayoutProps<"/[lang]">): Promise<M
   const title = `${profile.name} — ${profile.roleLead} ${profile.roleSparkle}`;
 
   return {
-    // metadataBase: new URL("https://..."), // TODO: set once deployed (Vercel domain)
+    metadataBase: new URL("https://portafolio-andresmonserrat.vercel.app"),
     title: { default: title, template: `%s — ${profile.name}` },
     description: meta.description,
     alternates: alternates(lang, "/"),
