@@ -36,3 +36,6 @@ next-env.d.ts
 
 # fotos originales (las versiones optimizadas viven en assets/images)
 /gallery
+
+# guía personal del proyecto (documentación privada)
+/GUIA_DEL_PROYECTO.md
