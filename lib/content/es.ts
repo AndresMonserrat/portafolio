@@ -204,7 +204,7 @@ const es: Content = {
     court: { eyebrow: "Selección de voleibol de Uninorte", title: "En la cancha" },
     journey: { eyebrow: "Trayectoria", title: "Cómo llegué hasta aquí" },
     crew: { eyebrow: "La manada", title: "Te presento a Thera y Plinio" },
-    gallery: { eyebrow: "Paisajes y pequeños detalles", title: "Cosas en las que me detengo a mirar" },
+    gallery: { eyebrow: "Paisajes y pequeños detalles", title: "Cosas en las que me detengo a mirar", skillLabel: "Habilidad blanda" },
     music: {
       eyebrow: "En repetición",
       intro: "Escucho de todo un poco: géneros latinos, pop e incluso música clásica.",
@@ -223,10 +223,10 @@ const es: Content = {
   ] as Photo[],
 
   landscapes: [
-    { src: images.landscapeSky, alt: "Un árbol alto contra un cielo azul intenso con nubes blancas", caption: "Mirando hacia arriba" },
-    { src: images.landscapePalms, alt: "Flores moradas frente a una hilera de palmas altas", caption: "Palmas y vincas" },
-    { src: images.landscapeDaisies, alt: "Un campo de pequeñas margaritas blancas con centro amarillo", caption: "Manzanilla" },
-    { src: images.landscapeDandelion, alt: "Una sola flor amarilla que resalta entre el pasto verde", caption: "Pequeños detalles" },
+    { src: images.landscapeSky, alt: "Un árbol alto contra un cielo azul intenso con nubes blancas", caption: "Mirando hacia arriba", skill: "Visión a largo plazo" },
+    { src: images.landscapePalms, alt: "Flores moradas frente a una hilera de palmas altas", caption: "Palmas y vincas", skill: "Adaptabilidad" },
+    { src: images.landscapeDaisies, alt: "Un campo de pequeñas margaritas blancas con centro amarillo", caption: "Manzanilla", skill: "Trabajo en equipo" },
+    { src: images.landscapeDandelion, alt: "Una sola flor amarilla que resalta entre el pasto verde", caption: "Pequeños detalles", skill: "Atención al detalle" },
   ] as Photo[],
 
 

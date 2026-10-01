@@ -147,7 +147,16 @@ export default async function AboutPage(props: PageProps<"/[lang]/about">) {
                   className="aspect-[3/4] w-full object-cover transition-transform duration-700 ease-spring hover:scale-105"
                 />
               </div>
-              <figcaption className="mt-2 font-mono text-xs text-muted">{photo.caption}</figcaption>
+              <figcaption className="mt-3">
+                <span className="block font-mono text-xs text-muted">{photo.caption}</span>
+                {photo.skill && (
+                  <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-1 font-display text-sm font-medium text-accent-ink">
+                    <span aria-hidden="true">✦</span>
+                    <span className="sr-only">{about.gallery.skillLabel}: </span>
+                    {photo.skill}
+                  </span>
+                )}
+              </figcaption>
             </figure>
           ))}
         </Reveal>

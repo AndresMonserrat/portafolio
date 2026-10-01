@@ -21,7 +21,8 @@ export type Project = {
   architecture?: string;
 };
 
-export type Photo = { src: StaticImageData; alt: string; caption: string };
+/** `skill`: habilidad blanda que la foto representa (se muestra en la galería de paisajes). */
+export type Photo = { src: StaticImageData; alt: string; caption: string; skill?: string };
 
 const en = {
   meta: {
@@ -218,7 +219,7 @@ const en = {
     court: { eyebrow: "Uninorte volleyball team", title: "On the court" },
     journey: { eyebrow: "Journey", title: "How I got here" },
     crew: { eyebrow: "The crew", title: "Meet Thera & Plinio" },
-    gallery: { eyebrow: "Landscapes & small details", title: "Things I stop to look at" },
+    gallery: { eyebrow: "Landscapes & small details", title: "Things I stop to look at", skillLabel: "Soft skill" },
     music: {
       eyebrow: "On repeat",
       intro: "I listen to a bit of everything: Latin genres, pop, and even classical.",
@@ -237,10 +238,10 @@ const en = {
   ] as Photo[],
 
   landscapes: [
-    { src: images.landscapeSky, alt: "Tall tree against a deep blue sky with white clouds", caption: "Looking up" },
-    { src: images.landscapePalms, alt: "Purple flowers in front of a row of tall palm trunks", caption: "Palms & periwinkles" },
-    { src: images.landscapeDaisies, alt: "A field of small white daisies with yellow centers", caption: "Chamomile" },
-    { src: images.landscapeDandelion, alt: "A single yellow flower standing out in green grass", caption: "Small details" },
+    { src: images.landscapeSky, alt: "Tall tree against a deep blue sky with white clouds", caption: "Looking up", skill: "Long-term vision" },
+    { src: images.landscapePalms, alt: "Purple flowers in front of a row of tall palm trunks", caption: "Palms & periwinkles", skill: "Adaptability" },
+    { src: images.landscapeDaisies, alt: "A field of small white daisies with yellow centers", caption: "Chamomile", skill: "Teamwork" },
+    { src: images.landscapeDandelion, alt: "A single yellow flower standing out in green grass", caption: "Small details", skill: "Attention to detail" },
   ] as Photo[],
 
 
