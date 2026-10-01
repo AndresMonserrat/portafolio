@@ -22,3 +22,6 @@ readme.md
 *.pem
 npm-debug.log*
 .DS_Store
+
+# Documentación privada
+GUIA_DEL_PROYECTO.md
